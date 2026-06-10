@@ -158,7 +158,7 @@ async function handleModuleEvent(event: MatrixEvent) {
                         });
                     }
 
-                    if (forwardResult.response[0]) {
+                    if (forwardResult.response[0].message) {
                         forwardResult.response.forEach(response => {
                             sendMessage(event.room_id, response.message, {
                                 moduleEvent: true,
