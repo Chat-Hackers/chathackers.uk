@@ -62,7 +62,7 @@ a {
 }
 
 #chat-container {
-  width: 50%;
+  /* width: 50%;*/
 }
 
 @media screen and (max-width: 700px) {
@@ -145,6 +145,7 @@ a {
   max-height: 800px;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 @media screen and (max-width: 500px) {
@@ -273,4 +274,11 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+#navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

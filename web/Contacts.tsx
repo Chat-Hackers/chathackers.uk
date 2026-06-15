@@ -29,11 +29,17 @@ export default function Contacts() {
   ];
 
   return (
-    <div id="contact-list">
-      <h1 id="contact-title">Conversations</h1>
-      {contacts.map((contact) => (
-        <Contact to={contact.to} name={contact.name} colour={contact.colour} />
-      ))}
+    <div id="phone">
+      <div id="contact-list">
+        <h1 id="contact-title">Conversations</h1>
+        {contacts.map((contact) => (
+          <Contact
+            to={contact.to}
+            name={contact.name}
+            colour={contact.colour}
+          />
+        ))}
+      </div>
     </div>
   );
 }

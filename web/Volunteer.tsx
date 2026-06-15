@@ -3,7 +3,7 @@ import { Message } from "./Home";
 
 export default function Volunteer() {
   return (
-    <div>
+    <div id="phone">
       <Header name="Volunteer" colour="yellow" />
       <Message
         side="left"

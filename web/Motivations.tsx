@@ -3,7 +3,7 @@ import { Message } from "./Home";
 
 export default function Motivations() {
   return (
-    <div>
+    <div id="phone">
       <Header name="Motivations" colour="black" />
       <div id="message-container">
         <Message

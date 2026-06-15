@@ -26,20 +26,15 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div id="phone">
-        <Routes>
-          <Route path="" element={<Home />} />
-          <Route path="conversations" element={<Contacts />} />
-          <Route path="faq" element={<FAQ />} />
-          <Route path="privacy" element={<Privacy />} />
-          <Route path="volunteer" element={<Volunteer />} />
-          <Route path="motivations" element={<Motivations />} />
-          <Route
-            path="tools"
-            element={<Tools registrations={registrations} />}
-          />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="" element={<Home />} />
+        <Route path="conversations" element={<Contacts />} />
+        <Route path="faq" element={<FAQ />} />
+        <Route path="privacy" element={<Privacy />} />
+        <Route path="volunteer" element={<Volunteer />} />
+        <Route path="motivations" element={<Motivations />} />
+        <Route path="tools" element={<Tools registrations={registrations} />} />
+      </Routes>
       <Routes>
         <Route path="chat" element={<Chat />} />
       </Routes>

@@ -178,7 +178,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div id="phone">
       <Header name="Chat Hackers HQ" colour="red" />
       <div id="message-container">
         {messages.map((message) => (
@@ -229,6 +229,6 @@ export default function Home() {
           </button>
         )}
       </div>
-    </>
+    </div>
   );
 }
