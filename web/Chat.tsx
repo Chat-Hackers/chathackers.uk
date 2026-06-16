@@ -1,5 +1,6 @@
 import { useSearchParams, Link } from "react-router";
 import { useEffect, useState, useRef } from "react";
+import { Wrench, ChartColumnBig, MessagesSquare } from "lucide-react";
 import { type Room, Tool, MatrixEvent } from "../types";
 import { getTools, getRoom, postToolActivation } from "./requests";
 import Toggle from "./common/Toggle";
@@ -45,7 +46,7 @@ export default function Chat() {
     if (chatRef.current) {
       chatRef.current.scrollTop = chatRef.current.scrollHeight;
     }
-  }, [room]);
+  }, [room, nav]);
 
   const messageCount =
     room &&
@@ -88,7 +89,7 @@ export default function Chat() {
   );
 
   const chatPanel = (
-    <div id="phone">
+    <div id="phone" style={{ minHeight: "auto" }}>
       <h2 id="chat-title">Last 100 messages</h2>
       <div id="chat-container" ref={chatRef}>
         {room &&
@@ -131,6 +132,10 @@ export default function Chat() {
   );
 
   const isDesktop = window.innerWidth > 700;
+  const navSelectedStyle = {
+    color: "white",
+    backgroundColor: "grey",
+  };
 
   return isDesktop ? (
     <div id="tools-chat-container">
@@ -139,15 +144,33 @@ export default function Chat() {
       {statsPanel}
     </div>
   ) : (
-    <div>
+    <>
       {nav === "tools" && toolsPanel}
       {nav === "chat" && chatPanel}
       {nav === "stats" && statsPanel}
       <div id="navbar">
-        <button onClick={() => setNav("tools")}>Tools</button>
-        <button onClick={() => setNav("chat")}>Chat</button>
-        <button onClick={() => setNav("stats")}>Stats</button>
+        <button
+          onClick={() => setNav("tools")}
+          className="nav-button"
+          style={nav === "tools" ? navSelectedStyle : {}}
+        >
+          <Wrench />
+        </button>
+        <button
+          onClick={() => setNav("chat")}
+          className="nav-button"
+          style={nav === "chat" ? navSelectedStyle : {}}
+        >
+          <MessagesSquare />
+        </button>
+        <button
+          onClick={() => setNav("stats")}
+          className="nav-button"
+          style={nav === "stats" ? navSelectedStyle : {}}
+        >
+          <ChartColumnBig />
+        </button>
       </div>
-    </div>
+    </>
   );
 }

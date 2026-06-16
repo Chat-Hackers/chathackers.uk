@@ -54,7 +54,7 @@ a {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #tools-container {
@@ -70,6 +70,7 @@ a {
 
 #stats-container {
   padding: 5px;
+  max-width: 300px;
 }
 
 #chat-title {
@@ -83,18 +84,6 @@ a {
   border-top: solid black 1px;
 }
 
-@media screen and (max-width: 700px) {
-  #tools-chat-container {
-    flex-direction: column;
-  }
-  #tools-container {
-    width: 100%;
-  }
-  #chat-container {
-    width: 100%;
-  }
-}
-
 .tool-container {
   display: flex;
   flex-direction: column;
@@ -102,6 +91,30 @@ a {
   margin: 5px;
   padding: 5px;
   max-width: 300px;
+}
+
+@media screen and (max-width: 700px) {
+  #root {
+    justify-content: flex-end;
+  }
+  #tools-chat-container {
+    flex-direction: column;
+  }
+  #tools-container {
+    width: 100%;
+    flex: 1;
+    padding: 0px;
+  }
+  .tool-container {
+    max-width: 100%;
+  }
+  #chat-container {
+    width: 100%;
+  }
+  #stats-container {
+    flex: 1;
+    max-width: 100%;
+  }
 }
 
 .tool-title-container {
@@ -177,7 +190,7 @@ a {
   overflow: auto;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   #phone {
     border: none;
     max-width: none;
@@ -310,6 +323,13 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.nav-button {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  color: black;
 }
 
 /* TOGGLE STYLE */
