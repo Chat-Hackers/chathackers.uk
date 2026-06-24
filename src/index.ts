@@ -1,7 +1,7 @@
 import "dotenv/config";
 import * as fs from "fs";
 import * as path from "path";
-import { getEvent, getSync, joinRoom, sendMessage, sendEvent, getRoomEvents, getProfile } from "./matrixClientRequests";
+import { getEvent, getSync, joinRoom, sendMessage, sendEvent, getRoomEvents, getProfile, createDirectMessageRoom, updateAccountData } from "./matrixClientRequests";
 import { MatrixEvent, ChatModule, RoomResult, Profile } from "../types";
 import { startDuckDB, getActiveModulesForRoomId, insertActiveModule, updateModuleActivation } from "./duckdb";
 import express from "express";
@@ -132,6 +132,19 @@ async function handleWrapperEvent(event: MatrixEvent) {
     }
 }
 
+let directRooms: { [key: string]: string[] } = {};
+
+async function getDirectRoom(recipient: string) {
+    if (directRooms[recipient])
+        return directRooms[recipient][0];
+
+    const roomCreationResponse = await createDirectMessageRoom(recipient);
+    const { room_id } = await roomCreationResponse.json() as { room_id: string };
+    updateAccountData(recipient, room_id)
+
+    return room_id;
+}
+
 async function handleModuleEvent(event: MatrixEvent) {
     const moduleActivations = await getActiveModulesForRoomId(event.room_id);
 
@@ -152,7 +165,9 @@ async function handleModuleEvent(event: MatrixEvent) {
                     }
 
                     if (forwardResult.response.message) {
-                        sendMessage(event.room_id, forwardResult.response.message, {
+                        const recipient = forwardResult.response.recipient;
+                        const destination = recipient ? await getDirectRoom(recipient) : event.room_id;
+                        sendMessage(destination, forwardResult.response.message, {
                             moduleEvent: true,
                             wrapperEvent: false,
                             ...forwardResult.response.context
@@ -161,8 +176,10 @@ async function handleModuleEvent(event: MatrixEvent) {
                     }
 
                     if (forwardResult.response[0].message) {
-                        forwardResult.response.forEach(response => {
-                            sendMessage(event.room_id, response.message, {
+                        forwardResult.response.forEach(async response => {
+                            const recipient = response.recipient;
+                            const destination = recipient ? await getDirectRoom(recipient) : event.room_id;
+                            sendMessage(destination, response.message, {
                                 moduleEvent: true,
                                 wrapperEvent: false,
                                 ...response.context
@@ -190,6 +207,15 @@ async function loadModules() {
 
 async function sync(batch = null) {
     const result: any = await getSync(batch);
+
+    if (result.account_data && result.account_data.events) {
+        const directRoomEvent = result.account_data.events.find(event => event.type === "m.direct");
+        if (directRoomEvent && directRoomEvent.content) {
+            for (const userId in directRoomEvent.content) {
+                directRooms[userId] = directRoomEvent.content[userId];
+            }
+        }
+    }
 
     if (result.rooms && result.rooms.invite) {
         for (const roomId in result.rooms.invite) {
@@ -259,11 +285,11 @@ async function startWebServer() {
     const routes = [
         "/",
         "/chat",
-        "/tools",
-        "/tools/*toolId",
+        "/conversations",
         "/faq",
-        "/legal",
-        "/volunteer"
+        "/privacy",
+        "/volunteer",
+        "/motivations",
     ]
     routes.forEach(route => {
         app.use(route, express.static("web/dist"));

@@ -1,4 +1,4 @@
-const { access_token, homeserver } = process.env;
+const { access_token, homeserver, userId } = process.env;
 
 export const getSync = async (batch: string | null) => {
   const syncResponse = await fetch(`${homeserver}/_matrix/client/v3/sync?timeout=30000${batch ? `&since=${batch}` : ""}`, {
@@ -91,35 +91,36 @@ export const joinRoom = async (roomId: string) => {
   );
 }
 
-/*
-export async function findDirectMessageRoom(userId: string): Promise<string | null> {
-  // Get all rooms the bot is in
-  const rooms = client.getRooms();
-  console.log("Rooms: ", rooms);
-  
-  // Find a direct message room with this user
-  for (const room of rooms) {
-    // Check if this is a direct message room
-    const isDM = true; //const isDM = room.getMembers().length === 2;
-    
-    if (isDM && room.getMember(userId)) {
-      return room.roomId;
+export async function createDirectMessageRoom(userId: string) {
+  return fetch(`${homeserver}/_matrix/client/v3/createRoom`, {
+    method: "POST",
+    body: JSON.stringify({
+      "is_direct": true,
+      "invite": [
+        userId
+      ],
+      "preset": "trusted_private_chat",
+      "name": ""
+    }),
+    headers: {
+      Authorization: `Bearer ${access_token}`,
     }
-  }
-  
-  // If no existing DM room found, create one
-  try {
-    const dmRoom = await client.createRoom({
-      preset: Preset.TrustedPrivateChat,
-      invite: [userId],
-      is_direct: true
-    });
-    return dmRoom.room_id;
-  } catch (error) {
-    console.error("Error creating DM room:", error);
-    return null;
-  }
-}*/
+  })
+}
+
+export async function updateAccountData(directUserId: string, roomId: string) {
+  return fetch(`${homeserver}/_matrix/client/v3/user/${userId}/account_data/m.direct`, {
+    method: "PUT",
+    body: JSON.stringify({
+      [directUserId]: [
+        roomId
+      ]
+    }),
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  })
+}
 
 export const getProfile = async (userId: string) => {
   const response = await fetch(`${homeserver}/_matrix/client/v3/profile/${userId}`, {
