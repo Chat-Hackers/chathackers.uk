@@ -1,14 +1,10 @@
-import { ChatModule } from "../types";
+export default function Tools() {
+  const tools = [{ emoji: "", title: "", description: "" }];
 
-export default function Tools({
-  registrations,
-}: {
-  registrations: ChatModule[];
-}) {
   return (
     <div id="phone">
       <h1>Tools</h1>
-      {registrations.map((registration) => (
+      {tools.map((registration) => (
         <div>
           <h2>
             {registration.emoji} {registration.title}
