@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        const l = window.location;
+        const base = '/';
+        const path = l.pathname.slice(base.length - 1);
+        l.replace(l.origin + base + '?path=' + encodeURIComponent(path) + '&' + l.search.slice(1));
+    </script>
+</head>
+
+</html>
