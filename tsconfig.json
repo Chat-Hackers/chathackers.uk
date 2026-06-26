@@ -6,7 +6,7 @@
         "outDir": "./docs",
         "skipLibCheck": true,
         "esModuleInterop": true,
-        "lib": ["es2021"],
+        "lib": ["es2021","dom"],
         "jsx": "react-jsx",
         "resolveJsonModule": true
     }
