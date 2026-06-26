@@ -1,10 +1,9 @@
 {
-    "exclude": ["./web", "./dist-web"],
-    "compilerOptions": {
+        "compilerOptions": {
        "module": "NodeNext",
         "moduleResolution": "NodeNext",
         "target": "ES2022",
-        "outDir": "./dist",
+        "outDir": "./docs",
         "skipLibCheck": true,
         "esModuleInterop": true,
         "lib": ["es2021"],
