@@ -6,4 +6,6 @@ The site is served from github pages, so we have to build it locally and output 
 
 ## Getting started
 
-1. We use `npm run build` to build the site.
+1. `npm run dev` to view the site locally 
+1. `npm run build` to build the site.
+1. `git push` to main or merge to main to deploy to github pages
