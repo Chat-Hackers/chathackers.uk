@@ -127,7 +127,9 @@ const options: Option[] = [
     question: "Sounds great, let's go!",
     reply: [
       {
-        text: "Ok, great. Just add <number available on request> to your whatsapp group and then interact with the tool from there!",
+        text: "Ok, great. We'll be in touch with you after you fill in ",
+        link: "https://form.chathackers.uk",
+        linkText: "our form",
       },
     ],
   },
