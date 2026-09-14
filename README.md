@@ -8,4 +8,5 @@ The site is served from github pages, so we have to build it locally and output 
 
 1. `npm run dev` to view the site locally 
 1. `npm run build` to build the site.
+1. restore `CNAME` file after the build step removes it or github pages isn't going to work
 1. `git push` to main or merge to main to deploy to github pages
