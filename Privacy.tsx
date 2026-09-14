@@ -1,11 +1,13 @@
 import Header from "./Header";
 import { Message } from "./Home";
+import Markdown from "react-markdown";
+import privacyNotice from "./privacy_notice.md?raw";
 
 export default function Privacy() {
   return (
     <div id="phone">
       <Header name="Privacy" colour="green" />
-      <Message side="left" text="Privacy policy coming soon" />
+      <Markdown>{privacyNotice}</Markdown>
     </div>
   );
 }
