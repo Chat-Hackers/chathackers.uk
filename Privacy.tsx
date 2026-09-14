@@ -1,5 +1,4 @@
 import Header from "./Header";
-import { Message } from "./Home";
 import Markdown from "react-markdown";
 import privacyNotice from "./privacy_notice.md?raw";
 

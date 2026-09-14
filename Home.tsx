@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
 import Header from "./Header";
+import type { Option, Message } from "./types";
 
-function TypingIndicator() {
+export function TypingIndicator() {
   return (
     <div className="message left">
       <span className="triangle left"></span>
@@ -21,17 +22,7 @@ function TypingIndicator() {
   );
 }
 
-export function Message({
-  text,
-  side,
-  link,
-  linkText,
-}: {
-  text: string;
-  side: string;
-  link?: string;
-  linkText?: string;
-}) {
+export function Message({ text, side, link, linkText }: Message) {
   return (
     <div className={`message ${side}`}>
       {side === "left" && <span className="triangle left"></span>}
@@ -48,18 +39,9 @@ export function Message({
   );
 }
 
-function Option({ text }: { text: string }) {
+export function Option({ text }: { text: string }) {
   return <p className="option">{text}</p>;
 }
-
-type Option = {
-  question: string;
-  reply: {
-    text: string;
-    link?: string;
-    linkText?: string;
-  }[];
-};
 
 const options: Option[] = [
   {
@@ -138,13 +120,6 @@ const options: Option[] = [
 const firstMessage = {
   text: "hello, nice to meet you, this is chat hackers HQ",
   side: "left",
-};
-
-type Message = {
-  text: string;
-  side: string;
-  link?: string;
-  linkText?: string;
 };
 
 export default function Home() {
