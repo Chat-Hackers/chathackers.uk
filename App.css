@@ -21,7 +21,7 @@ body {
   right: 0;
   bottom: 0;
   filter: blur(10px);
-  background-image: url("mesh.gif");
+  background-image: url("/mesh.gif");
   background-size: cover;
   object-fit: cover;
 }
