@@ -347,6 +347,11 @@ a {
   color: black;
 }
 
+#download-link{
+  text-align: center;
+  padding: 10px;
+}
+
 /* TOGGLE STYLE */
 
 .toggle-track {
