@@ -22,7 +22,7 @@ const tools = [
 ];
 
 const upcomingTools = [
-  { emoji: "🗳️", title: "Poll", description: "Collet and analyse your polls" },
+  { emoji: "🗳️", title: "Poll", description: "Collect and analyse your polls" },
   {
     emoji: "📧",
     title: "Email",
