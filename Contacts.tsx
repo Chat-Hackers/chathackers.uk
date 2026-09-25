@@ -22,6 +22,7 @@ function Contact({
 export default function Contacts() {
   const contacts = [
     { to: "/", name: "Chat Hackers HQ", colour: "red" },
+    { to: "/tools", name: "Tools", colour: "purple" },
     { to: "/faq", name: "FAQ", colour: "blue" },
     { to: "/privacy", name: "Privacy Policy", colour: "green" },
     { to: "/volunteer", name: "Volunteer", colour: "yellow" },

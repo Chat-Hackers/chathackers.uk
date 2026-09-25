@@ -1,17 +1,60 @@
-export default function Tools() {
-  const tools = [{ emoji: "", title: "", description: "" }];
+import Header from "./Header";
+import { Message } from "./Home";
 
+const tools = [
+  {
+    emoji: "👋",
+    title: "Welcome",
+    description:
+      "Sends a welcome message to your group and/or new members when they join",
+  },
+  { emoji: "📝", title: "Trello", description: "Adds tasks to trello board" },
+  {
+    emoji: "🌐",
+    title: "Publish",
+    description: "Creates source of posts to the web",
+  },
+  {
+    emoji: "🗓️",
+    title: "Event",
+    description: "Sends reminders of upcoming events to the group",
+  },
+];
+
+const upcomingTools = [
+  { emoji: "🗳️", title: "Poll", description: "Collet and analyse your polls" },
+  {
+    emoji: "📧",
+    title: "Email",
+    description: "Send messages to an email list",
+  },
+  {
+    emoji: "🌀",
+    title: "Spacetube",
+    description: "Connects your chat with other chats",
+  },
+];
+
+export default function Tools() {
   return (
     <div id="phone">
-      <h1>Tools</h1>
-      {tools.map((registration) => (
-        <div>
-          <h2>
-            {registration.emoji} {registration.title}
-          </h2>
-          <p>{registration.description}</p>
-        </div>
-      ))}
+      <Header name="Tools" colour="purple" />
+      <div id="message-container">
+        <Message text="What tools do you have?" side="right" />
+        {tools.map((tool) => (
+          <Message
+            text={`${tool.title} ${tool.emoji} ${tool.description}`}
+            side="left"
+          />
+        ))}
+        <Message text="What tools are upcoming?" side="right" />
+        {upcomingTools.map((tool) => (
+          <Message
+            text={`${tool.title} ${tool.emoji} ${tool.description}`}
+            side="left"
+          />
+        ))}
+      </div>
     </div>
   );
 }
