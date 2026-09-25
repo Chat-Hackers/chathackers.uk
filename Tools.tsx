@@ -33,6 +33,11 @@ const upcomingTools = [
     title: "Spacetube",
     description: "Connects your chat with other chats",
   },
+  {
+    emoji: "🎙️",
+    title: "Voice",
+    description: "Collects voice messages to transcribe and interact with",
+  },
 ];
 
 export default function Tools() {
