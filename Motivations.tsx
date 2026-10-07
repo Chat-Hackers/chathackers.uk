@@ -12,11 +12,11 @@ export default function Motivations() {
         />
         <Message
           side="left"
-          text="And that means being able to customise your Whatsapp group chat, just like you can on Slack or Discord"
+          text="And that means being able to customise your Whatsapp or Signal group chat, just like you can on Slack or Discord"
         />
         <Message
           side="left"
-          text="Why WhatsApp? Because it's the most common political organising tool in the UK"
+          text="Why Whatsapp and Signal? Those are the most common political organising tools in the UK"
         />
         <Message
           side="left"

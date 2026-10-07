@@ -24,7 +24,7 @@ const options: OptionType[] = [
     question: "How does this work?",
     reply: [
       {
-        text: "We use a piece of software called the Whatsapp-Matrix bridge, to bring messages onto our server, where we process and reply to them using the bridge.",
+        text: "We use a piece of software called the Whatsapp-Matrix bridge and Signal-Matrix, to bring Whatsapp and Signal messages onto our server, where we process and reply to them using the bridge.",
       },
     ],
   },
