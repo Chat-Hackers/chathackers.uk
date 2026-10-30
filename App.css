@@ -13,7 +13,7 @@ body {
   align-items: center;
 }
 
-#background{
+#background {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -44,7 +44,7 @@ iframe {
 }
 
 a {
-  text-decoration: underline wavy;
+  text-decoration: underline double;
   text-decoration-skip-ink: none;
   color: black;
 }
@@ -347,7 +347,7 @@ a {
   color: black;
 }
 
-#download-link{
+#download-link {
   text-align: center;
   padding: 10px;
 }
