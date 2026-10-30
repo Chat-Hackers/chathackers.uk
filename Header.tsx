@@ -9,8 +9,8 @@ export default function Header({
 }) {
   return (
     <div className="header">
-      <Link to="/conversations">
-        <p id="back-arrow">←</p>
+      <Link to="/conversations" id="back-arrow">
+        <p>←</p>
       </Link>
       <div className="profile-container">
         <div className="profile-pic" style={{ backgroundColor: colour }}></div>

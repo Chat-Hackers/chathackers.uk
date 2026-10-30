@@ -156,6 +156,7 @@ a {
 
 #back-arrow {
   margin-left: 5px;
+  text-decoration: none;
 }
 
 #header-button {
