@@ -72,6 +72,12 @@ We will only use your personal data in a way that you expect us to use it. We wi
 | Requesting permission for use of your data for the new feature within the messaging platform you use. | UK GDPR Article 6.1(f) Legitimate interests. |
 | Testing and analysing the effectiveness of the new features. |  |
 | Providing the feature within the messaging platform you use. |  |
+| To understand the level of engagement a person is having within the group. |  |
+| For people’s opinion’s to be consolidated into an email that can be shared to one or more person associated with the group. |  |
+| To moderate and notify a group member based on the language they are using in the group. |  |
+| To allow members to set a time when their post will be delivered to the group. |  |
+| To allow members to have an event they are promoting automatically posted to the group.  |  |
+| For the chat feed to be shared to another platform to make it easier for a wider group engagement where one part of the group may use WhatsApp and another may use Signal or Telegram. |  |
 | **All individuals**  |  |
 | To report to the appropriate authorities, who would be able to take action, any incidents of harm, child safeguarding, or concerns of crimes that may be witnessed or discussed.  | The lawful basis we will be relying on is that the processing is necessary for a task in the public interest, also known as ‘Public Task’ (UK GDPR Article 6.1 (e)). Special categories of personal data used for the purpose of Substantial Public Interest (Preventing or detecting unlawful acts; Protecting the public; Regulatory requirements) under UK GDPR Article 9.2(g).  |
 | To help protect an individual from neglect or physical, mental or emotional harm, or protect the physical, mental or emotional well-being of an individual. |  |
@@ -166,7 +172,7 @@ As you interact with our website, we automatically collect Technical Data about 
 
 Our website uses cookies for collecting user information which may include IP address, operating system, and browser information. We use persistent cookies to track returning visitors. They expire after 12 months and enable us to compare website traffic from month to month.
 
-Cookies are text files, which identify a user’s computer to our servers. Cookies in themselves do not identify the individual user, just the computer used. You can learn more about cookies by visiting [http://www.allaboutcookies.org/](http://www.allaboutcookies.org/).
+Cookies are text files, which identify a user’s computer to our servers. Cookies in themselves do not identify the individual user, just the computer used. You can learn more about cookies by visiting [http\://www\.allaboutcookies.org/](http://www.allaboutcookies.org/).
 
 You can manage and delete cookies through your web browser. Each browser manages cookies differently, but you can learn more about cookie settings in the most common browsers using the links below:
 
