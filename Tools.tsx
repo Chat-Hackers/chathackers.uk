@@ -5,38 +5,66 @@ const tools = [
   {
     emoji: "👋",
     title: "Welcome",
-    description:
-      "Sends a welcome message to your group and/or new members when they join",
+    description: "Sends a welcome message to your group when new members join",
   },
-  { emoji: "📝", title: "Trello", description: "Adds tasks to trello board" },
-  {
-    emoji: "🌐",
-    title: "Publish",
-    description: "Creates source of posts to the web",
-  },
-  {
-    emoji: "🗓️",
-    title: "Event",
-    description: "Sends reminders of upcoming events to the group",
-  },
-];
-
-const upcomingTools = [
-  { emoji: "🗳️", title: "Poll", description: "Collect and analyse your polls" },
   {
     emoji: "📧",
-    title: "Email",
-    description: "Send messages to an email list",
+    title: "Email Summaries",
+    description: "Get summaries of the chat via email",
   },
   {
     emoji: "🌀",
-    title: "Spacetube",
-    description: "Connects your chat with other chats",
+    title: "Spacetube Chat Connection",
+    description:
+      "Forward messages from your chat to other groups and platforms",
+  },
+  {
+    emoji: "🗓️",
+    title: "Event Reminders",
+    description: "Sends reminders of upcoming events to the group",
+  },
+  {
+    emoji: "⏰",
+    title: "Message Scheduler",
+    description: "Schedule messages to be sent at specific times",
+  },
+  {
+    emoji: "🛡️",
+    title: "Auto Moderator",
+    description: "Approved-number checks, auto-remove and message rules",
+  },
+  {
+    emoji: "📈",
+    title: "Stats Dashboard",
+    description: "See membership growth and engagement over time",
   },
   {
     emoji: "🎙️",
     title: "Voice",
     description: "Collects voice messages to transcribe and interact with",
+  },
+  {
+    emoji: "🌐",
+    title: "Publish to Web",
+    description: "Creates source of posts to the web",
+  },
+  {
+    emoji: "📝",
+    title: "Trello Integration",
+    description: "Adds tasks to a trello board",
+  },
+];
+
+const upcomingTools = [
+  {
+    emoji: "🗳️",
+    title: "Voting",
+    description: "Granular voting with secret ballots",
+  },
+  {
+    emoji: "📜",
+    title: "Story Choices",
+    description: "Choose your own adventure through a scenario as a group",
   },
 ];
 
